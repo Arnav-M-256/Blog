@@ -23,5 +23,12 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    books = get_all_books()
+    return render_template('index.html', books=books)
 
+
+
+@app.route('/<int:book_id>')
+def book_details(book_id):
+    book = get_book(book_id)
+    return render_template('book.html', book=book)

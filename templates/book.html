@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %} {{ book['title'] }} {% endblock %}</h1>
+    <span class="badge badge-primary">{{ book['isbn'] }}</span>
+    <h3>Author(s):{{book['authors']}}</h3>
+    <h3>Publisher:{{book['publisher']}}</h3>
+    <h3>Number of pages:{{book['num_pages']}}</h3>
+    <h3>language:{{book['language_code']}}</h3>
+    <h3>Rating:{{book['average_rating']}}</h3>
+{% endblock %}
